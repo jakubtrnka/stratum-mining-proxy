@@ -62,16 +62,23 @@ proxy connects to Slush's pool interface.
 7. If you want to connect to another pool or change other proxy settings, type "./mining_proxy.py --help".
 8. If you want to update the proxy, type "git pull" in the package directory.
 
+Installation on Arch Linux
+--------------------------
+1. `git clone https://aur.archlinux.org/stratum-mining-proxy.git`
+1. `cd stratum-mining-proxy`
+1. `makepkg -sri`
+1. run `stratum-mining-proxy -o us-east.stratum.slushpool.com -p 3333 -sh 0.0.0.0 -sp 3333 --enable-stratum-extensions`
+
 Installation with Docker
 ------------------------
 
 This works on any system with Docker (Linux/Mac/Windows) and doesn't need anything other than Git and Docker.
 
-1. git clone git://github.com/slush0/stratum-mining-proxy.git
+1. git clone https://github.com/jakubtrnka/stratum-mining-proxy.git
 2. cd stratum-mining-proxy
 3. docker build -t stratum-mining-proxy .
-4. Run interactively: docker run --rm -p 8332:8332 -it stratum-mining-proxy [-o eu.stratum.slushpool.com -p 3333 ...]
-5. Run as a service: docker run -d --name stratum-mining-proxy --restart unless-stopped -p 8332:8332 stratum-mining-proxy [-o eu.stratum.slushpool.com -p 3333 ...]
+4. Run interactively: docker run --rm -p 3333:3333 -it stratum-mining-proxy [-o eu.stratum.slushpool.com -p 3333 ...]
+5. Run as a service: docker run -d --name stratum-mining-proxy --restart unless-stopped -p 3333:3333 stratum-mining-proxy [-o eu.stratum.slushpool.com -p 3333 ...]
 
 Compiling midstate C extension
 ------------------------------
