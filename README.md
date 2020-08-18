@@ -1,10 +1,15 @@
 stratum-mining-proxy
 ====================
+Notes on Stratum extensions
+-------------------------------
+
+In order to operate on bosminer, stratum extensions need to be enabled (`--enable-stratum-extensions`).
+
 Installation using Docker
 -------------------------------
 This works on any system with Docker (Linux/Mac/Windows) and doesn't need anything other than Git and Docker.
 
-1. `git clone git://github.com/jakubtrnka/stratum-mining-proxy.git`
+1. Download and extract this directory
 1. `cd stratum-mining-proxy`
 1. `docker build -t stratum-mining-proxy .`
 1. Run interactively: `docker run -it --rm -p 3333:3333 stratum-mining-proxy -o us-east.stratum.slushpool.com -p 3333 -sh 0.0.0.0 -sp 3333 --enable-stratum-extensions`
@@ -15,8 +20,8 @@ Installation on Linux using Git
 This is advanced option for experienced users, but give you the easiest way for updating the proxy.
 
 1. install python2 and python2-virtualenv for your distribution
-1. `git clone git://github.com/jakubtrnka/stratum-mining-proxy.git`
-1. `git clone git://github.com/braiins/stratum.git`
+1. Download and extract this directory
+1. Download stratum dependency `git clone git://github.com/braiins/stratum.git`
 1. `cd stratum-mining-proxy`
 1. `virtualenv .env --python=/usr/bin/python2.7`
 1. `. .env/bin/activate`
@@ -27,10 +32,10 @@ This is advanced option for experienced users, but give you the easiest way for 
 
 Troubleshooting: Installation on Ubuntu/RaspberryPi
 -------------------------------
-This is advanced option for experienced users, but give you the easiest way for updating the proxy.
+There seem to be problems with building pyinstaller with default compiler GCC on RaspberryPi
 
 1. install python2 and python2-virtualenv for your distribution
-1. `git clone git://github.com/jakubtrnka/stratum-mining-proxy.git`
+1. Download and extract this directory
 1. `git clone git://github.com/braiins/stratum.git`
 1. `cd stratum-mining-proxy`
 1. `virtualenv .env --python=/usr/bin/python2.7`
